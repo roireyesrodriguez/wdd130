@@ -1,0 +1,23 @@
+heater,
+main,
+footer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    {
+    background-color: #333333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+
+}
+
+main {
+    width: 600px;
+    margin 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
