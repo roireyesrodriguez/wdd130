@@ -1,0 +1,241 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #2c3e50;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #34495e;
+}
+
+nav a.active {
+    background-color: #3498db;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.hero-article {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero-article img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.hero-article p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* History Section */
+.history {
+    background-color: #ecf0f1;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.history h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.history p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Adventure Section */
+.adventure {
+    background-color: #3498db;
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.adventure h2 {
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.image-placeholder {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.image-placeholder p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.socialmedia {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.socialmedia a {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.socialmedia a:hover {
+    transform: translateY(-3px);
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-article {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-article img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .socialmedia {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+}
