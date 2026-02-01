@@ -9,20 +9,24 @@
     <meta name="author" content="Your Full Name">
     <title>Rapid Adventures - About Us</title>
     <link rel="stylesheet" href="styles/rafting.css">
-
 </head>
 
 <body>
     <header>
-        <div class="header-container">
+        <!-- Usando CSS Grid en el header para logo y navegación -->
+        <div class="header-grid">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Rapid Adventures Logo - White Water Rafting">
+                <img src="images/logo.png" alt="Rapid Adventures Logo - White Water Rafting"
+                  width="100">
             </a>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html" class="active">About Us</a>
-                <a href="trips.html">Trips</a>
-                <a href="contact.html">Contact Us</a>
+                <!-- Usando CSS Flex en la navegación -->
+                <ul class="nav-flex">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -42,40 +46,69 @@
             </article>
         </div>
 
-        <!-- History Section -->
+        <!-- History Section Actualizada -->
         <section class="history">
             <h2>History</h2>
-            <p>Founded in 2008 by Rodrigo Reyes, a passionate rafting guide, Rapid Adventures began
-                with just two rafts and a team of three. What started as a small operation on the
-                Colorado River has grown into the region's leading rafting company. Over the past 18
-                years, we've safely guided more than 3,000 adventurers through challenging and
-                beautiful river routes, always maintaining our commitment to safety and
-                environmental sustainability.</p>
+            <div class="history-content">
+                <p>Founded in 2008 by Rodrigo Reyes, a passionate rafting guide, Rapid Adventures
+                    began
+                    with just two rafts and a team of three. What started as a small operation on
+                    the
+                    Colorado River has grown into the region's leading rafting company.</p>
+
+                <img src="images/history.jpg" alt="Historical photo of early rafting days"
+                  width="300">
+
+                <p>Over the past 15+ years, we've safely guided more than 3,000 adventurers through
+                    challenging and beautiful river routes, always maintaining our commitment to
+                    safety
+                    and environmental sustainability. Our team now includes 25 certified guides.</p>
+            </div>
         </section>
 
-        <!-- Adventure Awaits Section -->
+        <!-- Adventure Awaits Section Actualizada -->
         <section class="adventure">
             <h2>Adventure Awaits You!</h2>
-            <!-- Images will be added in the next assignment -->
-            <div class="image-placeholder">
-                <p>Exciting river images coming soon!</p>
+            <div class="adventure-gallery">
+                <figure>
+                    <img src="images/rafting1.jpg" alt="Exciting white water rapids">
+                    <figcaption>Los Dientes del Diablo</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/rafting2.jpg" alt="Group navigating rapids">
+                    <figcaption>Big Mallard</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/rafting3.jpg" alt="Family rafting trip">
+                    <figcaption>Half Day Adventure</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/rafting4.jpg" alt="Challenging river section">
+                    <figcaption>Devil's Throat</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/rafting5.jpg" alt="Scenic rafting route">
+                    <figcaption>Full Day Excursion</figcaption>
+                </figure>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Rapid Adventures | Rodrigo Reyes</p>
-        <nav class="socialmedia">
-            <a href="https://facebook.com" target="_blank">
-                <img src="images/social/facebook.png" alt="Visit our Facebook page">
-            </a>
-            <a href="https://twitter.com" target="_blank">
-                <img src="images/social/twitter.png" alt="Follow us on Twitter">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="images/social/instagram.png" alt="Follow us on Instagram">
-            </a>
-        </nav>
+        <div class="footer-content">
+            <p>&copy; 2026 Rapid Adventures | Rodrigo Reyes</p>
+            <nav class="socialmedia">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="images/social/facebook.png" alt="Visit our Facebook page" width="30">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="images/social/twitter.png" alt="Follow us on Twitter" width="30">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="images/social/instagram.png" alt="Follow us on Instagram" width="30">
+                </a>
+            </nav>
+        </div>
     </footer>
 </body>
 

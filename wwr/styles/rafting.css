@@ -12,6 +12,8 @@
     /* Light blueish white */
     --heading-font: "Times New Roman", Georgia, serif;
     --body-font: Arial, Helvetica, sans-serif;
+    --highlight-color: #f97316;
+    /* Added for accents */
 }
 
 /* 2. Reset box model properties for all elements to zero */
@@ -25,39 +27,78 @@
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
+    line-height: 1.6;
+    background-color: #f5f7fa;
 }
 
-/* 4. Limit page width and center content */
+/* 4. Remove old width constraint and use max-width instead */
 header,
 main,
 footer {
-    width: 840px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* 5. Style header with primary color background and accent2 color text */
+/* 5. UPDATE: Header with CSS Grid for horizontal layout */
 header {
     background-color: var(--primary-color);
     color: var(--accent2-color);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-bottom: 4px solid var(--highlight-color);
+}
+
+/* CSS Grid for header layout - logo and navigation */
+.header-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
+    gap: 30px;
 }
 
 .logo img {
     height: 60px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-nav a {
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* CSS Flex for horizontal navigation */
+.nav-flex {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-flex li {
+    margin: 0;
+}
+
+.nav-flex a {
     color: var(--accent2-color);
     text-decoration: none;
-    margin-left: 20px;
-    padding: 5px 10px;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-nav a:hover {
+.nav-flex a:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.nav-flex a.active {
+    background-color: var(--highlight-color);
+    color: white;
 }
 
 /* 6. Style headings */
@@ -67,93 +108,302 @@ h2 {
     color: var(--primary-color);
 }
 
-/* 7. Consistent margin and padding for nav, paragraph, section, and article */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--highlight-color);
 }
 
 /* 8. Style the Hero Div with overlays */
 .hero {
     position: relative;
-    margin: 16px;
+    margin: 20px 0 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* 9. Style the image inside div class="hero" */
 .hero img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 400px;
+    object-fit: cover;
+    filter: brightness(0.85);
 }
 
 /* 10. Style h1 header with absolute positioning */
 .hero h1 {
     position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
+    top: 30px;
+    left: 0;
+    right: 0;
+    padding: 20px;
     text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
-    color: #fff;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    background-color: rgba(30, 58, 138, 0.6);
+    opacity: 1;
+    border-radius: 0;
 }
 
 /* 11. Style article using absolute positioning */
-.hero article {
+.hero-article {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 16px;
+    bottom: 30px;
+    right: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* 12. Style the img inside the article */
-.hero article img {
-    float: right;
-    width: 125px;
-    margin-left: 16px;
-    border: 1px solid #ccc;
+.hero-article img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--highlight-color);
+    margin-left: 0;
+    float: none;
 }
 
-/* History section styling */
+.hero-article p {
+    flex: 1;
+    font-size: 1rem;
+    color: var(--accent1-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* UPDATE: History section with three-column layout */
 .history {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-}
-
-/* Adventure section styling */
-.adventure {
-    background-color: #e9f5ff;
-    border: 1px solid #ddd;
-}
-
-.image-placeholder {
-    text-align: center;
+    background-color: white;
     padding: 40px;
-    background-color: #f0f0f0;
-    border: 2px dashed #ccc;
-    margin: 16px;
+    margin: 40px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer styling */
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.history-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+}
+
+.history-content img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    border: 3px solid white;
+    transition: transform 0.3s ease;
+}
+
+.history-content img:hover {
+    transform: scale(1.03);
+}
+
+/* UPDATE: Adventure section with 5 images horizontally */
+.adventure {
+    background-color: white;
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.adventure-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.adventure-gallery figure {
+    margin: 0;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.adventure-gallery figure:hover {
+    transform: translateY(-5px);
+}
+
+.adventure-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.adventure-gallery img:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: var(--highlight-color);
+}
+
+.adventure-gallery figcaption {
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+/* UPDATE: Footer with social icons on the right */
 footer {
     background-color: var(--primary-color);
     color: var(--accent2-color);
-    padding: 20px;
-    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+    border-top: 4px solid var(--highlight-color);
 }
 
-/* 13. Remove underline from social media image links in footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Social media icons arranged horizontally to the right */
+.socialmedia {
+    display: flex;
+    gap: 15px;
+}
+
 .socialmedia a {
     text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.socialmedia a:hover {
+    transform: translateY(-3px);
 }
 
 .socialmedia img {
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.socialmedia a:hover img {
+    filter: brightness(0) invert(0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .adventure-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .history-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .history-content img {
+        justify-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 15px;
+    }
+
+    .nav-flex {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        padding: 15px;
+    }
+
+    .hero-article {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin: 20px;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .adventure-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .adventure-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .history-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
 }
