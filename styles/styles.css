@@ -1,0 +1,250 @@
+/* ===========================================
+   1. SELECTOR UNIVERSAL (W03)
+   =========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================================
+   2. REGLA COMBINADA W04: header, .grid, footer
+   =========================================== */
+header,
+.grid,
+footer {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+/* ===========================================
+   3. HEADER Y NAVEGACIÓN CON FLEXBOX (W04)
+   =========================================== */
+header {
+    background-color: steelblue;
+    padding: 1rem;
+}
+
+/* Flexbox para navegación horizontal */
+nav {
+    background-color: steelblue;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Estilos para enlaces de navegación */
+nav a {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+/* ===========================================
+   4. BORDE INFERIOR PARA H1 (W04)
+   =========================================== */
+h1 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+/* ===========================================
+   5. DISEÑO GRID (W04)
+   =========================================== */
+.grid {
+    display: grid;
+    align-items: start;
+    /* Cambiado de 'center' a 'start' para mejor alineación */
+    grid-template-columns: 1fr 3fr;
+    /* Método alternativo: define columnas explícitamente */
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Posicionamiento de elementos en grid */
+main {
+    grid-column: 2 / 3;
+}
+
+aside {
+    width: 20rem;
+    position: relative;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+/* ===========================================
+   6. IMAGEN FLOTANTE (W03 - CORREGIDA)
+   =========================================== */
+main img {
+    width: 150px;
+    height: auto;
+    float: right;
+    margin: 0 0 1rem 1rem;
+    border: 1px solid steelblue;
+    padding: 2px;
+    box-shadow: 0 0 30px gray;
+}
+
+/* Ajuste del párrafo para flotar correctamente */
+main p {
+    line-height: 1.6;
+    text-align: justify;
+    overflow: auto;
+    /* Esto asegura que el contenedor contenga la imagen flotante */
+}
+
+/* ===========================================
+   7. CLASS SELECTORS (W03)
+   =========================================== */
+/* Class Selectors */
+.box {
+    margin: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    background-color: #eee;
+    color: #000;
+    border-radius: 5px;
+}
+
+/* ===========================================
+   8. ASIDE Y OVERLAY (W03)
+   =========================================== */
+aside {
+    width: 20rem;
+    text-align: center;
+    position: relative;
+}
+
+aside img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+/* Overlay heading */
+aside h2 {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+}
+
+/* ===========================================
+   9. LISTA DE TEMPLOS (W03)
+   =========================================== */
+ul.box {
+    margin-top: 2rem;
+    padding-left: 2rem;
+    clear: both;
+    /* Limpia el float de la imagen */
+}
+
+ul.box li {
+    margin-bottom: 0.5rem;
+}
+
+ul.box a {
+    color: steelblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul.box a:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+
+/* ===========================================
+   10. FOOTER
+   =========================================== */
+footer {
+    margin-top: 2rem;
+    border-top: 1px solid #000;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: steelblue;
+    color: white;
+}
+
+/* ===========================================
+   11. DISEÑO RESPONSIVE
+   =========================================== */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        display: block;
+    }
+
+    main,
+    aside {
+        width: 100%;
+        margin: 1rem 0;
+        grid-column: 1;
+    }
+
+    aside {
+        grid-row: 2;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+
+    aside h2 {
+        position: static;
+        color: #000;
+        text-shadow: none;
+        background-color: transparent;
+        transform: none;
+        width: 100%;
+        padding: 0.5rem 0;
+        margin-bottom: 1rem;
+    }
+
+    main img {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem auto;
+        width: 200px;
+    }
+
+    main p {
+        text-align: left;
+    }
+}
+
+/* ===========================================
+   12. CORRECCIÓN DE EMERGENCIA PARA FLOAT
+   =========================================== */
+/* Si la imagen aún no flota, esta regla lo solucionará */
+.grid main > img:first-of-type {
+    float: right !important;
+    margin-left: 20px !important;
+    margin-bottom: 15px !important;
+}
