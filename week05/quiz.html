@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSS Quiz</title>
+    <link rel="stylesheet" href="styles/styles/quiz.css">
+</head>
+
+<body>
+    <header>
+        <h1>HTML and CSS Knowledge Quiz</h1>
+    </header>
+    <main>
+        <form id="quiz-form" action="#" method="post">
+
+            <!-- Question 1: Text Input (Fill in the blank) -->
+            <div class="form-group">
+                <label for="q1">1. What does CSS stand for? (Fill in the blank): Cascading ________
+                    Sheets</label>
+                <input type="text" id="q1" name="q1" placeholder="Enter your answer here..."
+                  required>
+            </div>
+
+            <!-- Question 2: Textarea (Short answer) -->
+            <div class="form-group">
+                <label for="q2">2. Explain the difference between padding and margin in CSS:</label>
+                <textarea id="q2" name="q2" rows="4" placeholder="Type your explanation here..."
+                  required></textarea>
+            </div>
+
+            <!-- Question 3: Select (Dropdown) -->
+            <div class="form-group">
+                <label for="q3">3. Which HTML tag is used to create a hyperlink?</label>
+                <select id="q3" name="q3" required>
+                    <option value="" selected disabled>Choose One ...</option>
+                    <option value="link">&lt;link&gt;</option>
+                    <option value="a">&lt;a&gt;</option>
+                    <option value="href">&lt;href&gt;</option>
+                    <option value="url">&lt;url&gt;</option>
+                </select>
+            </div>
+
+            <!-- Question 4: Number Input -->
+            <div class="form-group">
+                <label for="q4">4. How many heading levels (h1-h6) are available in HTML?</label>
+                <input type="number" id="q4" name="q4" min="1" max="10" placeholder="Enter a number"
+                  required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Submit Quiz</button>
+            </div>
+
+        </form>
+    </main>
+</body>
+
+</html>
