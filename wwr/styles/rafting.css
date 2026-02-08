@@ -1,4 +1,4 @@
-/* rafting-simple.css - Clean, contrast-fixed version */
+/* rafting.css - COMPLETE for ALL pages */
 
 /* 1. Universal reset */
 * {
@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-/* 2. Color variables - ONLY HEX for consistency */
+/* 2. Color variables - GOOD CONTRAST */
 :root {
     --primary: #1e3a8a;
     /* Dark blue */
@@ -16,13 +16,15 @@
     --accent: #065f46;
     /* Forest green */
     --highlight: #b45309;
-    /* Dark orange (good contrast) */
+    /* Dark orange (4.5:1 contrast) */
     --dark: #1f2937;
     /* Dark text */
     --light: #ffffff;
-    /* White (changed from #f8fafc for better contrast) */
+    /* White */
     --gray: #e5e7eb;
     /* Light gray */
+    --light-blue: #e0f2fe;
+    /* Light blue for sections */
 }
 
 /* 3. Body */
@@ -36,7 +38,7 @@ body {
     line-height: 1.5;
 }
 
-/* 4. HEADER - CSS Grid */
+/* 4. HEADER - CSS Grid (ALL pages) */
 header {
     background-color: var(--primary);
     padding: 15px 0;
@@ -53,7 +55,7 @@ header {
     height: 60px;
 }
 
-/* 5. NAV - CSS Flex - FIXED CONTRAST */
+/* 5. NAV - CSS Flex (ALL pages) - FIXED CONTRAST */
 .nav-flex {
     display: flex;
     justify-content: flex-end;
@@ -63,27 +65,141 @@ header {
 
 .nav-flex a {
     color: var(--light);
-    /* White text */
     text-decoration: none;
     padding: 10px 15px;
     font-weight: 600;
     background-color: var(--secondary);
-    /* Blue background for contrast */
     border-radius: 4px;
 }
 
 .nav-flex a:hover {
     background-color: #1d4ed8;
-    /* Darker blue */
 }
 
 .nav-flex a.active {
     background-color: var(--highlight);
-    /* Orange */
     color: var(--light);
 }
 
-/* 6. CONTACT HERO */
+/* ========== ABOUT PAGE STYLES ========== */
+
+/* 6. HERO SECTION (About page) */
+.hero {
+    position: relative;
+    margin: 30px 0;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    text-align: center;
+    color: var(--light);
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+article.hero-article {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+article.hero-article img {
+    float: right;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-left: 20px;
+    border: 3px solid var(--highlight);
+}
+
+/* Clear float */
+article.hero-article::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 7. HISTORY SECTION (About page) */
+.history {
+    background-color: var(--light-blue);
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 8px;
+}
+
+.history h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.history-content img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* 8. ADVENTURE SECTION (About page) */
+.adventure {
+    background-color: var(--light-blue);
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 8px;
+}
+
+.adventure h2 {
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 30px;
+}
+
+.adventure-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.adventure-gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.adventure-gallery figcaption {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* ========== CONTACT PAGE STYLES ========== */
+
+/* 9. CONTACT HERO */
 .contact-hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--light);
@@ -98,7 +214,7 @@ header {
     margin-bottom: 10px;
 }
 
-/* 7. COMPANY INFO */
+/* 10. COMPANY INFO */
 .company-info {
     background-color: var(--gray);
     padding: 30px;
@@ -129,7 +245,7 @@ header {
     margin-bottom: 10px;
 }
 
-/* 8. MAP */
+/* 11. MAP */
 .map-section {
     margin: 30px 0;
 }
@@ -144,7 +260,7 @@ header {
     text-align: center;
 }
 
-/* 9. CONTACT FORM */
+/* 12. CONTACT FORM */
 .contact-form {
     background-color: var(--gray);
     padding: 30px;
@@ -222,7 +338,7 @@ header {
     background-color: #92400e;
 }
 
-/* 10. EMPLOYEE PROFILES */
+/* 13. EMPLOYEE PROFILES */
 .employee-profiles {
     margin: 40px 0;
 }
@@ -261,7 +377,7 @@ header {
     margin-bottom: 5px;
 }
 
-/* 11. FOOTER */
+/* ========== FOOTER (ALL pages) ========== */
 footer {
     background-color: var(--primary);
     color: var(--light);
@@ -290,7 +406,22 @@ footer p {
     height: 30px;
 }
 
-/* 12. RESPONSIVE */
+/* ========== RESPONSIVE (ALL pages) ========== */
+@media (max-width: 1024px) {
+    .adventure-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .history-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .history-content img {
+        justify-self: center;
+    }
+}
+
 @media (max-width: 768px) {
     .header-grid {
         grid-template-columns: 1fr;
@@ -303,8 +434,19 @@ footer p {
         flex-wrap: wrap;
     }
 
+    .hero h1,
     .contact-hero h1 {
         font-size: 2rem;
+    }
+
+    article.hero-article img {
+        float: none;
+        display: block;
+        margin: 0 auto 15px;
+    }
+
+    .adventure-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .info-grid,
@@ -316,5 +458,17 @@ footer p {
         flex-direction: column;
         text-align: center;
         gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .adventure-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 }
