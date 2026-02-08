@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-      content="Contact Rapid Adventures Rafting. Get in touch for bookings, questions, or feedback. Find our location, phone, and email.">
+      content="Contact Rapid Adventures Rafting for bookings, questions, or feedback. Find our location, phone, and email.">
     <meta name="author" content="Rodrigo Reyes">
     <title>Rapid Adventures Rafting - Contact Us</title>
     <link rel="stylesheet" href="styles/rafting.css">
@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="header-grid">
-            <img src="images/logo.png" alt="Rapid Adventures Logo" width="100">
+            <img src="images/logo.png" alt="Rapid Adventures Logo">
             <nav>
                 <ul class="nav-flex">
                     <li><a href="index.html">Home</a></li>
@@ -27,7 +27,6 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <div class="contact-hero">
             <h1>Contact Rapid Adventures Rafting</h1>
             <p>Get in touch with our team for bookings, questions, or feedback!</p>
@@ -39,28 +38,18 @@
                 <h2>Our Information</h2>
                 <div class="info-grid">
                     <div class="info-item">
-                        <h3>📍 Address</h3>
-                        <p>123 River Canyon Road<br>
-                            Colorado Springs, CO 80903<br>
-                            United States</p>
+                        <h3>Address</h3>
+                        <p>123 River Canyon Road<br>Colorado Springs, CO 80903<br>United States</p>
                     </div>
                     <div class="info-item">
-                        <h3>📞 Phone</h3>
-                        <p>Main Office: (719) 555-RAFT<br>
-                            Reservations: (719) 555-BOOK<br>
-                            Emergency: (719) 555-HELP</p>
+                        <h3>Phone</h3>
+                        <p>Main Office: (719) 555-RAFT<br>Reservations: (719) 555-BOOK<br>Emergency:
+                            (719) 555-HELP</p>
                     </div>
                     <div class="info-item">
-                        <h3>✉️ Email</h3>
-                        <p>General: info@rapidadventures.com<br>
-                            Bookings: bookings@rapidadventures.com<br>
-                            Support: support@rapidadventures.com</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>🕒 Hours</h3>
-                        <p>Monday - Friday: 8:00 AM - 6:00 PM<br>
-                            Saturday: 7:00 AM - 8:00 PM<br>
-                            Sunday: 8:00 AM - 5:00 PM</p>
+                        <h3>Email</h3>
+                        <p>General: info@rapidadventures.com<br>Bookings:
+                            bookings@rapidadventures.com<br>Support: support@rapidadventures.com</p>
                     </div>
                 </div>
             </section>
@@ -71,60 +60,66 @@
                 <div class="map-container">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.424697698672!2d-104.82154592427946!3d39.424770771125115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c9f4a4e9e4e4d%3A0x4f0c1e3e3e3e3e3e!2sColorado%20Springs%2C%20CO%2C%20USA!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
-                      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                      width="600" height="300" allowfullscreen="" loading="lazy"
+                      title="Rapid Adventures Rafting Location">
                     </iframe>
                 </div>
             </section>
 
-            <!-- Contact Form -->
+            <!-- Contact Form CORREGIDO -->
             <section class="contact-form">
                 <h2>Send Us a Message</h2>
                 <form action="#" method="post">
                     <div class="form-group">
-                        <label for="name">Your Name *</label>
+                        <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required placeholder="John Doe">
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email Address *</label>
+                        <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" required
                           placeholder="john@example.com">
                     </div>
 
+                    <!-- Radio buttons en lugar de select -->
                     <div class="form-group">
-                        <label for="purpose">Purpose of Message *</label>
-                        <select id="purpose" name="purpose" required>
-                            <option value="" disabled selected>Select a purpose</option>
-                            <option value="booking">Booking Inquiry</option>
-                            <option value="question">General Question</option>
-                            <option value="feedback">Feedback</option>
-                            <option value="group">Group Event</option>
-                            <option value="other">Other</option>
-                        </select>
+                        <label>Purpose of Message</label>
+                        <div class="radio-group">
+                            <input type="radio" id="purpose-booking" name="purpose" value="booking"
+                              required>
+                            <label for="purpose-booking">Booking Inquiry</label>
+
+                            <input type="radio" id="purpose-question" name="purpose"
+                              value="question">
+                            <label for="purpose-question">General Question</label>
+
+                            <input type="radio" id="purpose-feedback" name="purpose"
+                              value="feedback">
+                            <label for="purpose-feedback">Feedback</label>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Your Message *</label>
+                        <label for="message">Your Message</label>
                         <textarea id="message" name="message" rows="5" required
                           placeholder="Tell us how we can help you..."></textarea>
                     </div>
 
                     <div class="form-group checkbox">
                         <input type="checkbox" id="newsletter" name="newsletter">
-                        <label for="newsletter">Subscribe to our monthly newsletter for updates and
-                            special offers</label>
+                        <label for="newsletter">Subscribe to our monthly newsletter</label>
                     </div>
 
-                    <button type="submit" class="submit-btn">Send Your Message</button>
+                    <button type="submit" class="submit-btn">Send Your Message Now</button>
                 </form>
             </section>
 
-            <!-- Employee Profiles -->
+            <!-- Employee Profiles con nombres CORREGIDOS -->
             <section class="employee-profiles">
                 <h2>Meet Our Team</h2>
                 <div class="employee-grid">
                     <figure>
-                        <img src="images/instrcutor 1.jpg" alt="Don Johnson - Trip Coordinator">
+                        <img src="images/instructor-1.jpg" alt="Sarah Johnson - Trip Coordinator">
                         <figcaption>
                             <h3>Sarah Johnson</h3>
                             <p>Trip Coordinator</p>
@@ -132,7 +127,7 @@
                         </figcaption>
                     </figure>
                     <figure>
-                        <img src="images/instrcutor 2.jpg" alt="Mike Rodriguez - Safety Instructor">
+                        <img src="images/instructor-2.jpg" alt="Mike Rodriguez - Safety Instructor">
                         <figcaption>
                             <h3>Mike Rodriguez</h3>
                             <p>Safety Instructor</p>
@@ -140,7 +135,7 @@
                         </figcaption>
                     </figure>
                     <figure>
-                        <img src="images/instructor 3.jpg" alt="David Chen - Customer Relations">
+                        <img src="images/instructor-3.jpg" alt="Emma Chen - Customer Relations">
                         <figcaption>
                             <h3>Emma Chen</h3>
                             <p>Customer Relations</p>
@@ -156,13 +151,13 @@
         <p>&copy; 2026 Rapid Adventures Rafting | Rodrigo Reyes</p>
         <nav class="socialmedia">
             <a href="https://facebook.com" target="_blank">
-                <img src="images/social/facebook.png" alt="Facebook" width="30">
+                <img src="images/social/facebook.png" alt="Visit our Facebook page" width="30">
             </a>
             <a href="https://twitter.com" target="_blank">
-                <img src="images/social/twitter.png" alt="Twitter" width="30">
+                <img src="images/social/twitter.png" alt="Follow us on Twitter" width="30">
             </a>
             <a href="https://instagram.com" target="_blank">
-                <img src="images/social/instagram.png" alt="Instagram" width="30">
+                <img src="images/social/instagram.png" alt="Follow us on Instagram" width="30">
             </a>
         </nav>
     </footer>

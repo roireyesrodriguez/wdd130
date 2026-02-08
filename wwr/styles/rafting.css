@@ -356,221 +356,313 @@ nav.socialmedia img {
     }
 }
 
-/* ========== CONTACT PAGE STYLES ========== */
+/* rafting-simple.css - Clean, contrast-fixed version */
 
-.contact-hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-    margin: 20px 0 40px;
-    border-radius: 12px;
+/* 1. Universal reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.contact-hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
-    position: static;
-    /* Override hero h1 absolute positioning */
+/* 2. Color variables - ONLY HEX for consistency */
+:root {
+    --primary: #1e3a8a;
+    /* Dark blue */
+    --secondary: #2563eb;
+    /* Medium blue */
+    --accent: #065f46;
+    /* Forest green */
+    --highlight: #b45309;
+    /* Dark orange (good contrast) */
+    --dark: #1f2937;
+    /* Dark text */
+    --light: #ffffff;
+    /* White (changed from #f8fafc for better contrast) */
+    --gray: #e5e7eb;
+    /* Light gray */
 }
 
-.contact-container {
+/* 3. Body */
+body {
+    font-family: Arial, sans-serif;
+    color: var(--dark);
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    background-color: var(--light);
+    line-height: 1.5;
 }
 
-/* Company Information */
+/* 4. HEADER - CSS Grid */
+header {
+    background-color: var(--primary);
+    padding: 15px 0;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-grid img {
+    height: 60px;
+}
+
+/* 5. NAV - CSS Flex - FIXED CONTRAST */
+.nav-flex {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-flex a {
+    color: var(--light);
+    /* White text */
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 600;
+    background-color: var(--secondary);
+    /* Blue background for contrast */
+    border-radius: 4px;
+}
+
+.nav-flex a:hover {
+    background-color: #1d4ed8;
+    /* Darker blue */
+}
+
+.nav-flex a.active {
+    background-color: var(--highlight);
+    /* Orange */
+    color: var(--light);
+}
+
+/* 6. CONTACT HERO */
+.contact-hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light);
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.contact-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* 7. COMPANY INFO */
 .company-info {
-    background: var(--light);
-    padding: 40px;
-    border-radius: 12px;
-    margin-bottom: 40px;
-    border: 2px solid var(--secondary-color);
+    background-color: var(--gray);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 8px;
 }
 
 .company-info h2 {
-    color: var(--primary-color);
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 25px;
 }
 
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 20px;
 }
 
 .info-item {
-    background: white;
+    background-color: var(--light);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
 }
 
 .info-item h3 {
-    color: var(--primary-color);
+    color: var(--primary);
     margin-bottom: 10px;
 }
 
-/* Google Map */
+/* 8. MAP */
 .map-section {
-    margin: 40px 0;
+    margin: 30px 0;
 }
 
 .map-section h2 {
     text-align: center;
-    color: var(--accent-color);
+    color: var(--accent);
     margin-bottom: 20px;
-    font-size: 2.2rem;
 }
 
 .map-container {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
 }
 
-/* Contact Form */
+/* 9. CONTACT FORM */
 .contact-form {
-    background: var(--light);
-    padding: 40px;
-    border-radius: 12px;
-    margin: 40px 0;
-    border: 2px solid var(--secondary-color);
+    background-color: var(--gray);
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 8px;
 }
 
 .contact-form h2 {
     text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 30px;
-    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 25px;
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 8px;
+    color: var(--primary);
     font-weight: 600;
-    color: var(--primary-color);
 }
 
 .form-group input,
-.form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
     font-size: 1rem;
-    font-family: inherit;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--secondary-color);
+/* Radio buttons */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    font-weight: normal;
 }
 
 .checkbox {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
 }
 
 .checkbox input {
     width: auto;
-    margin-top: 5px;
-}
-
-.checkbox label {
-    margin-bottom: 0;
-    font-weight: normal;
 }
 
 .submit-btn {
-    background: var(--highlight-color);
-    color: white;
+    background-color: var(--highlight);
+    color: var(--light);
     border: none;
-    padding: 15px 40px;
+    padding: 12px 30px;
     font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.3s ease;
 }
 
 .submit-btn:hover {
-    background: #92400e;
-    /* Darker orange */
+    background-color: #92400e;
 }
 
-/* Employee Profiles */
+/* 10. EMPLOYEE PROFILES */
 .employee-profiles {
-    margin: 60px 0 40px;
+    margin: 40px 0;
 }
 
 .employee-profiles h2 {
     text-align: center;
-    color: var(--accent-color);
-    margin-bottom: 40px;
-    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 30px;
 }
 
 .employee-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
 .employee-grid figure {
-    background: white;
-    border-radius: 12px;
+    background-color: var(--light);
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .employee-grid img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
 }
 
 .employee-grid figcaption {
-    padding: 20px;
+    padding: 15px;
 }
 
 .employee-grid h3 {
-    color: var(--primary-color);
+    color: var(--primary);
     margin-bottom: 5px;
 }
 
-.employee-grid p {
-    color: var(--text-dark);
-    margin-bottom: 5px;
-    font-size: 0.95rem;
+/* 11. FOOTER */
+footer {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 25px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Responsive Design for Contact Page */
+footer p {
+    margin: 0;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 15px;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    width: 30px;
+    height: 30px;
+}
+
+/* 12. RESPONSIVE */
 @media (max-width: 768px) {
+    .header-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .nav-flex {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     .contact-hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .contact-hero {
-        padding: 40px 20px;
-    }
-
-    .company-info,
-    .contact-form {
-        padding: 30px 20px;
+        font-size: 2rem;
     }
 
     .info-grid,
@@ -578,7 +670,9 @@ nav.socialmedia img {
         grid-template-columns: 1fr;
     }
 
-    .submit-btn {
-        padding: 12px 30px;
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
     }
 }
