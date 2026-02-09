@@ -36,6 +36,7 @@ body {
 header {
     background-color: var(--primary);
     padding: 15px 0;
+    color: var(--light);
 }
 
 .header-grid {
@@ -235,7 +236,7 @@ header {
 }
 
 .contact-hero p {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 1);
 }
 
 .company-info {
