@@ -1,6 +1,6 @@
-/* rafting.css - COMPLETE FIXED VERSION WITH ACCESSIBILITY */
+/* rafting.css - VERSIÓN LIMPIA Y CORREGIDA */
 
-/* 1. Universal reset - improved */
+/* 1. Universal reset */
 *,
 *::before,
 *::after {
@@ -9,24 +9,16 @@
     box-sizing: border-box;
 }
 
-/* 2. Color variables - ONLY HEX for consistency */
+/* 2. Color variables */
 :root {
     --primary: #1e3a8a;
-    /* Dark blue */
     --secondary: #2563eb;
-    /* Medium blue */
     --accent: #065f46;
-    /* Forest green */
     --highlight: #b45309;
-    /* Dark orange */
     --dark: #000000;
-    /* BLACK for best contrast */
     --light: #ffffff;
-    /* White */
     --gray: #f3f4f6;
-    /* Light gray */
     --light-blue: #dbeafe;
-    /* Light blue */
 }
 
 /* 3. Body */
@@ -40,9 +32,7 @@ body {
     line-height: 1.6;
 }
 
-/* ========== HEADER & NAV (ALL PAGES) ========== */
-
-/* 4. HEADER - FIXED CONTRAST */
+/* ========== HEADER & NAV ========== */
 header {
     background-color: var(--primary);
     padding: 15px 0;
@@ -60,7 +50,6 @@ header {
     width: auto;
 }
 
-/* 5. NAV - FIXED: White text on blue background for contrast */
 .nav-flex {
     display: flex;
     justify-content: flex-end;
@@ -70,35 +59,28 @@ header {
 
 .nav-flex a {
     color: var(--light);
-    /* WHITE text */
     text-decoration: none;
     padding: 10px 15px;
     font-weight: 600;
     background-color: var(--secondary);
-    /* Blue background */
     border-radius: 4px;
     transition: background-color 0.3s;
 }
 
 .nav-flex a:hover {
     background-color: #1d4ed8;
-    /* Darker blue on hover */
 }
 
 .nav-flex a.active {
     background-color: var(--highlight);
-    /* Orange for active */
     color: var(--light);
 }
 
-/* ========== ABOUT PAGE STYLES ========== */
-
-/* 6. HERO SECTION - FIXED with required rules */
+/* ========== HERO SECTION (SOLO UNA VERSIÓN) ========== */
 .hero {
     position: relative;
     margin-top: 50px;
     height: 600px;
-    /* AUMENTADO para más espacio */
     overflow: hidden;
     border-radius: 8px;
 }
@@ -108,7 +90,6 @@ header {
     height: 100%;
     object-fit: cover;
     filter: brightness(0.7);
-    ;
 }
 
 .hero h1 {
@@ -128,19 +109,15 @@ header {
 .hero article {
     position: absolute;
     bottom: 80px;
-    /* BAJADO más */
     left: 50%;
     transform: translateX(-50%);
     width: 85%;
     max-width: 1000px;
-    /* MÁXIMO más grande */
     background: rgba(255, 255, 255, 0.98);
-    /* MENOS transparente */
     padding: 25px 30px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     z-index: 2;
-    margin-bottom: 0;
 }
 
 .hero article img {
@@ -149,7 +126,7 @@ header {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-left: 120px;
+    margin-left: 20px;
     margin-bottom: 10px;
     border: 3px solid var(--highlight);
 }
@@ -166,7 +143,7 @@ header {
     clear: both;
 }
 
-/* 7. HISTORY SECTION */
+/* ========== HISTORY SECTION ========== */
 .history {
     background-color: var(--light-blue);
     padding: 40px;
@@ -190,7 +167,6 @@ header {
 
 .history-content p {
     color: var(--dark);
-    /* CHANGED: Dark text for better contrast on light-blue */
     line-height: 1.8;
 }
 
@@ -202,7 +178,7 @@ header {
     border: 3px solid var(--light);
 }
 
-/* 8. ADVENTURE SECTION */
+/* ========== ADVENTURE SECTION ========== */
 .adventure {
     background-color: var(--light-blue);
     padding: 40px;
@@ -213,7 +189,6 @@ header {
 .adventure h2 {
     text-align: center;
     color: var(--dark);
-    /* CHANGED: Dark text for better contrast */
     font-size: 2rem;
     margin-bottom: 30px;
 }
@@ -241,12 +216,9 @@ header {
     margin-top: 10px;
     font-weight: 600;
     color: var(--dark);
-    /* CHANGED: Dark text for better contrast */
 }
 
-/* ========== CONTACT PAGE STYLES ========== */
-
-/* 9. CONTACT HERO - FIXED: White text on dark background */
+/* ========== CONTACT PAGE ========== */
 .contact-hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--light);
@@ -264,10 +236,8 @@ header {
 
 .contact-hero p {
     color: rgba(255, 255, 255, 0.95);
-    /* Increased opacity for better contrast */
 }
 
-/* 10. COMPANY INFO */
 .company-info {
     background-color: var(--gray);
     padding: 30px;
@@ -304,7 +274,6 @@ header {
     color: var(--dark);
 }
 
-/* 11. MAP */
 .map-section {
     margin: 30px 0;
 }
@@ -312,7 +281,6 @@ header {
 .map-section h2 {
     text-align: center;
     color: var(--dark);
-    /* CHANGED: Dark text for better contrast */
     font-size: 2rem;
     margin-bottom: 20px;
 }
@@ -323,7 +291,6 @@ header {
     overflow: hidden;
 }
 
-/* 12. CONTACT FORM */
 .contact-form {
     background-color: var(--gray);
     padding: 30px;
@@ -346,7 +313,6 @@ header {
     display: block;
     margin-bottom: 8px;
     color: var(--dark);
-    /* CHANGED: Dark text for better contrast */
     font-weight: 600;
 }
 
@@ -368,7 +334,6 @@ header {
     border-color: var(--secondary);
 }
 
-/* Radio buttons */
 .radio-group {
     display: flex;
     flex-direction: column;
@@ -419,7 +384,6 @@ header {
     background-color: #92400e;
 }
 
-/* 13. EMPLOYEE PROFILES */
 .employee-profiles {
     margin: 40px 0;
 }
@@ -427,7 +391,6 @@ header {
 .employee-profiles h2 {
     text-align: center;
     color: var(--dark);
-    /* CHANGED: Dark text for better contrast */
     font-size: 2rem;
     margin-bottom: 30px;
 }
@@ -465,7 +428,7 @@ header {
     color: var(--dark);
 }
 
-/* ========== FOOTER (ALL PAGES) ========== */
+/* ========== FOOTER ========== */
 footer {
     background-color: var(--primary);
     color: var(--light);
@@ -495,10 +458,10 @@ footer p {
 .socialmedia img {
     width: 30px;
     height: 30px;
-
+    /* SIN FILTER - iconos con colores normales */
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
     .adventure-gallery {
         grid-template-columns: repeat(3, 1fr);
@@ -574,39 +537,4 @@ footer p {
     .contact-hero h1 {
         font-size: 1.8rem;
     }
-}
-
-/* ========== ADDITIONAL FIXES FOR CONTRAST ISSUES ========== */
-/* These ensure all text has proper contrast */
-
-/* Fix any remaining dark text on primary background */
-header *:not(.nav-flex a) {
-    color: var(--light) !important;
-}
-
-/* Ensure all text in light-blue sections has dark color */
-.history *,
-.adventure *,
-.contact-form *,
-.company-info * {
-    color: var(--dark);
-}
-
-/* Specific fix for headings on colored backgrounds */
-h1,
-h2,
-h3 {
-    color: var(--dark);
-}
-
-/* Ensure text on primary background is always white */
-.contact-hero *,
-footer * {
-    color: var(--light);
-}
-
-/* Fix any potential invisible text */
-* {
-    color: inherit;
-    /* Ensure color inheritance works properly */
 }
