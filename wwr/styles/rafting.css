@@ -1,13 +1,15 @@
-/* rafting.css - COMPLETE for ALL pages */
+/* rafting.css - COMPLETE FIXED VERSION WITH ACCESSIBILITY */
 
-/* 1. Universal reset */
-* {
+/* 1. Universal reset - improved */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 2. Color variables - GOOD CONTRAST */
+/* 2. Color variables - ONLY HEX for consistency */
 :root {
     --primary: #1e3a8a;
     /* Dark blue */
@@ -16,15 +18,15 @@
     --accent: #065f46;
     /* Forest green */
     --highlight: #b45309;
-    /* Dark orange (4.5:1 contrast) */
-    --dark: #1f2937;
-    /* Dark text */
+    /* Dark orange */
+    --dark: #000000;
+    /* BLACK for best contrast */
     --light: #ffffff;
     /* White */
-    --gray: #e5e7eb;
+    --gray: #f3f4f6;
     /* Light gray */
-    --light-blue: #e0f2fe;
-    /* Light blue for sections */
+    --light-blue: #dbeafe;
+    /* Light blue */
 }
 
 /* 3. Body */
@@ -35,10 +37,12 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     background-color: var(--light);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* 4. HEADER - CSS Grid (ALL pages) */
+/* ========== HEADER & NAV (ALL PAGES) ========== */
+
+/* 4. HEADER - FIXED CONTRAST */
 header {
     background-color: var(--primary);
     padding: 15px 0;
@@ -53,9 +57,10 @@ header {
 
 .header-grid img {
     height: 60px;
+    width: auto;
 }
 
-/* 5. NAV - CSS Flex (ALL pages) - FIXED CONTRAST */
+/* 5. NAV - FIXED: White text on blue background for contrast */
 .nav-flex {
     display: flex;
     justify-content: flex-end;
@@ -65,29 +70,35 @@ header {
 
 .nav-flex a {
     color: var(--light);
+    /* WHITE text */
     text-decoration: none;
     padding: 10px 15px;
     font-weight: 600;
     background-color: var(--secondary);
+    /* Blue background */
     border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 .nav-flex a:hover {
     background-color: #1d4ed8;
+    /* Darker blue on hover */
 }
 
 .nav-flex a.active {
     background-color: var(--highlight);
+    /* Orange for active */
     color: var(--light);
 }
 
 /* ========== ABOUT PAGE STYLES ========== */
 
-/* 6. HERO SECTION (About page) */
+/* 6. HERO SECTION - FIXED with required rules */
 .hero {
     position: relative;
-    margin: 30px 0;
-    height: 400px;
+    margin-top: 50px;
+    height: 600px;
+    /* AUMENTADO para más espacio */
     overflow: hidden;
     border-radius: 8px;
 }
@@ -96,46 +107,66 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(0.7);
+    ;
 }
 
 .hero h1 {
     position: absolute;
-    top: 40px;
+    top: 60px;
     width: 100%;
     text-align: center;
     color: var(--light);
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 3rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+    background: rgba(30, 58, 138, 0.8);
+    padding: 25px 20px;
+    margin: 0;
+    z-index: 2;
 }
 
-article.hero-article {
+.hero article {
     position: absolute;
-    bottom: 20px;
+    bottom: 80px;
+    /* BAJADO más */
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-radius: 8px;
+    width: 85%;
+    max-width: 1000px;
+    /* MÁXIMO más grande */
+    background: rgba(255, 255, 255, 0.98);
+    /* MENOS transparente */
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    margin-bottom: 0;
 }
 
-article.hero-article img {
+.hero article img {
     float: right;
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin-left: 20px;
+    object-fit: cover;
+    margin-left: 120px;
+    margin-bottom: 10px;
     border: 3px solid var(--highlight);
 }
 
-/* Clear float */
-article.hero-article::after {
+.hero article p {
+    color: var(--dark);
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.hero article::after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* 7. HISTORY SECTION (About page) */
+/* 7. HISTORY SECTION */
 .history {
     background-color: var(--light-blue);
     padding: 40px;
@@ -146,6 +177,7 @@ article.hero-article::after {
 .history h2 {
     text-align: center;
     color: var(--primary);
+    font-size: 2rem;
     margin-bottom: 30px;
 }
 
@@ -156,14 +188,21 @@ article.hero-article::after {
     align-items: center;
 }
 
+.history-content p {
+    color: var(--dark);
+    /* CHANGED: Dark text for better contrast on light-blue */
+    line-height: 1.8;
+}
+
 .history-content img {
     width: 300px;
     height: 200px;
     object-fit: cover;
     border-radius: 6px;
+    border: 3px solid var(--light);
 }
 
-/* 8. ADVENTURE SECTION (About page) */
+/* 8. ADVENTURE SECTION */
 .adventure {
     background-color: var(--light-blue);
     padding: 40px;
@@ -173,7 +212,9 @@ article.hero-article::after {
 
 .adventure h2 {
     text-align: center;
-    color: var(--accent);
+    color: var(--dark);
+    /* CHANGED: Dark text for better contrast */
+    font-size: 2rem;
     margin-bottom: 30px;
 }
 
@@ -183,23 +224,29 @@ article.hero-article::after {
     gap: 15px;
 }
 
+.adventure-gallery figure {
+    margin: 0;
+    text-align: center;
+}
+
 .adventure-gallery img {
     width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 6px;
+    border: 2px solid var(--light);
 }
 
 .adventure-gallery figcaption {
-    text-align: center;
     margin-top: 10px;
     font-weight: 600;
-    color: var(--primary);
+    color: var(--dark);
+    /* CHANGED: Dark text for better contrast */
 }
 
 /* ========== CONTACT PAGE STYLES ========== */
 
-/* 9. CONTACT HERO */
+/* 9. CONTACT HERO - FIXED: White text on dark background */
 .contact-hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--light);
@@ -212,6 +259,12 @@ article.hero-article::after {
 .contact-hero h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: var(--light);
+}
+
+.contact-hero p {
+    color: rgba(255, 255, 255, 0.95);
+    /* Increased opacity for better contrast */
 }
 
 /* 10. COMPANY INFO */
@@ -225,6 +278,7 @@ article.hero-article::after {
 .company-info h2 {
     text-align: center;
     color: var(--primary);
+    font-size: 2rem;
     margin-bottom: 25px;
 }
 
@@ -238,11 +292,16 @@ article.hero-article::after {
     background-color: var(--light);
     padding: 20px;
     border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .info-item h3 {
     color: var(--primary);
     margin-bottom: 10px;
+}
+
+.info-item p {
+    color: var(--dark);
 }
 
 /* 11. MAP */
@@ -252,12 +311,16 @@ article.hero-article::after {
 
 .map-section h2 {
     text-align: center;
-    color: var(--accent);
+    color: var(--dark);
+    /* CHANGED: Dark text for better contrast */
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
 .map-container {
     text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 /* 12. CONTACT FORM */
@@ -271,6 +334,7 @@ article.hero-article::after {
 .contact-form h2 {
     text-align: center;
     color: var(--primary);
+    font-size: 2rem;
     margin-bottom: 25px;
 }
 
@@ -281,7 +345,8 @@ article.hero-article::after {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: var(--primary);
+    color: var(--dark);
+    /* CHANGED: Dark text for better contrast */
     font-weight: 600;
 }
 
@@ -289,9 +354,18 @@ article.hero-article::after {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 2px solid #ccc;
+    border: 2px solid #d1d5db;
     border-radius: 4px;
     font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
 }
 
 /* Radio buttons */
@@ -310,6 +384,7 @@ article.hero-article::after {
     display: inline-flex;
     align-items: center;
     font-weight: normal;
+    color: var(--dark);
 }
 
 .checkbox {
@@ -322,6 +397,11 @@ article.hero-article::after {
     width: auto;
 }
 
+.checkbox label {
+    color: var(--dark);
+    font-weight: normal;
+}
+
 .submit-btn {
     background-color: var(--highlight);
     color: var(--light);
@@ -332,6 +412,7 @@ article.hero-article::after {
     border-radius: 6px;
     cursor: pointer;
     width: 100%;
+    transition: background-color 0.3s;
 }
 
 .submit-btn:hover {
@@ -345,7 +426,9 @@ article.hero-article::after {
 
 .employee-profiles h2 {
     text-align: center;
-    color: var(--accent);
+    color: var(--dark);
+    /* CHANGED: Dark text for better contrast */
+    font-size: 2rem;
     margin-bottom: 30px;
 }
 
@@ -359,6 +442,7 @@ article.hero-article::after {
     background-color: var(--light);
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -377,7 +461,11 @@ article.hero-article::after {
     margin-bottom: 5px;
 }
 
-/* ========== FOOTER (ALL pages) ========== */
+.employee-grid p {
+    color: var(--dark);
+}
+
+/* ========== FOOTER (ALL PAGES) ========== */
 footer {
     background-color: var(--primary);
     color: var(--light);
@@ -386,10 +474,13 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 8px 8px 0 0;
 }
 
 footer p {
     margin: 0;
+    font-size: 1rem;
+    color: var(--light);
 }
 
 .socialmedia {
@@ -404,9 +495,10 @@ footer p {
 .socialmedia img {
     width: 30px;
     height: 30px;
+    filter: brightness(0) invert(1);
 }
 
-/* ========== RESPONSIVE (ALL pages) ========== */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 1024px) {
     .adventure-gallery {
         grid-template-columns: repeat(3, 1fr);
@@ -419,6 +511,7 @@ footer p {
 
     .history-content img {
         justify-self: center;
+        order: 2;
     }
 }
 
@@ -437,9 +530,14 @@ footer p {
     .hero h1,
     .contact-hero h1 {
         font-size: 2rem;
+        padding: 15px;
     }
 
-    article.hero-article img {
+    .hero article {
+        padding: 20px;
+    }
+
+    .hero article img {
         float: none;
         display: block;
         margin: 0 auto 15px;
@@ -471,4 +569,44 @@ footer p {
         align-items: center;
         gap: 10px;
     }
+
+    .hero h1,
+    .contact-hero h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ========== ADDITIONAL FIXES FOR CONTRAST ISSUES ========== */
+/* These ensure all text has proper contrast */
+
+/* Fix any remaining dark text on primary background */
+header *:not(.nav-flex a) {
+    color: var(--light) !important;
+}
+
+/* Ensure all text in light-blue sections has dark color */
+.history *,
+.adventure *,
+.contact-form *,
+.company-info * {
+    color: var(--dark);
+}
+
+/* Specific fix for headings on colored backgrounds */
+h1,
+h2,
+h3 {
+    color: var(--dark);
+}
+
+/* Ensure text on primary background is always white */
+.contact-hero *,
+footer * {
+    color: var(--light);
+}
+
+/* Fix any potential invisible text */
+* {
+    color: inherit;
+    /* Ensure color inheritance works properly */
 }
