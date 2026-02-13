@@ -1,6 +1,6 @@
-/* rafting.css - VERSIÓN LIMPIA Y CORREGIDA */
+/* rafting.css - COMPLETE RAFTING SITE STYLESHEET */
 
-/* 1. Universal reset */
+/* 1. Universal reset - improved */
 *,
 *::before,
 *::after {
@@ -9,21 +9,29 @@
     box-sizing: border-box;
 }
 
-/* 2. Color variables */
+/* 2. Color variables - ONLY HEX for consistency */
 :root {
     --primary: #1e3a8a;
+    /* Dark blue */
     --secondary: #2563eb;
+    /* Medium blue */
     --accent: #065f46;
+    /* Forest green */
     --highlight: #b45309;
+    /* Dark orange (5.02:1 contrast) */
     --dark: #000000;
+    /* Black for text */
     --light: #ffffff;
+    /* White */
     --gray: #f3f4f6;
+    /* Light gray */
     --light-blue: #dbeafe;
+    /* Light blue for sections */
 }
 
 /* 3. Body */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: var(--dark);
     max-width: 1200px;
     margin: 0 auto;
@@ -32,11 +40,11 @@ body {
     line-height: 1.6;
 }
 
-/* ========== HEADER & NAV ========== */
+/* ========== HEADER & NAV (ALL PAGES) ========== */
 header {
     background-color: var(--primary);
     padding: 15px 0;
-    color: var(--light);
+    margin-bottom: 20px;
 }
 
 .header-grid {
@@ -77,11 +85,74 @@ header {
     color: var(--light);
 }
 
-/* ========== HERO SECTION (SOLO UNA VERSIÓN) ========== */
+/* ========== FOOTER (ALL PAGES) ========== */
+footer {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 25px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 15px;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    width: 30px;
+    height: 30px;
+}
+
+/* ========== BUTTONS (ALL PAGES) ========== */
+.cta-button {
+    display: inline-block;
+    background-color: var(--highlight);
+    color: var(--light);
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--light);
+}
+
+.cta-button:hover {
+    background-color: #92400e;
+    transform: scale(1.05);
+}
+
+.cta-button-large {
+    display: inline-block;
+    background-color: var(--highlight);
+    color: var(--light);
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--light);
+}
+
+/* ========== ABOUT PAGE STYLES ========== */
 .hero {
     position: relative;
-    margin-top: 50px;
-    height: 600px;
+    margin: 30px 0;
+    height: 400px;
     overflow: hidden;
     border-radius: 8px;
 }
@@ -90,35 +161,31 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7);
 }
 
 .hero h1 {
     position: absolute;
-    top: 60px;
+    top: 40px;
     width: 100%;
     text-align: center;
     color: var(--light);
-    font-size: 3rem;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
-    background: rgba(30, 58, 138, 0.8);
-    padding: 25px 20px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background: rgba(30, 58, 138, 0.7);
+    padding: 20px;
     margin: 0;
-    z-index: 2;
 }
 
 .hero article {
     position: absolute;
-    bottom: 80px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    width: 85%;
-    max-width: 1000px;
-    background: rgba(255, 255, 255, 0.98);
-    padding: 25px 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    z-index: 2;
+    width: 90%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 8px;
 }
 
 .hero article img {
@@ -126,16 +193,8 @@ header {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    object-fit: cover;
     margin-left: 20px;
-    margin-bottom: 10px;
     border: 3px solid var(--highlight);
-}
-
-.hero article p {
-    color: var(--dark);
-    line-height: 1.7;
-    font-size: 1.1rem;
 }
 
 .hero article::after {
@@ -144,7 +203,6 @@ header {
     clear: both;
 }
 
-/* ========== HISTORY SECTION ========== */
 .history {
     background-color: var(--light-blue);
     padding: 40px;
@@ -166,20 +224,13 @@ header {
     align-items: center;
 }
 
-.history-content p {
-    color: var(--dark);
-    line-height: 1.8;
-}
-
 .history-content img {
     width: 300px;
     height: 200px;
     object-fit: cover;
     border-radius: 6px;
-    border: 3px solid var(--light);
 }
 
-/* ========== ADVENTURE SECTION ========== */
 .adventure {
     background-color: var(--light-blue);
     padding: 40px;
@@ -189,7 +240,7 @@ header {
 
 .adventure h2 {
     text-align: center;
-    color: var(--dark);
+    color: var(--accent);
     font-size: 2rem;
     margin-bottom: 30px;
 }
@@ -200,32 +251,27 @@ header {
     gap: 15px;
 }
 
-.adventure-gallery figure {
-    margin: 0;
-    text-align: center;
-}
-
 .adventure-gallery img {
     width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 6px;
-    border: 2px solid var(--light);
 }
 
 .adventure-gallery figcaption {
+    text-align: center;
     margin-top: 10px;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--primary);
 }
 
-/* ========== CONTACT PAGE ========== */
+/* ========== CONTACT PAGE STYLES ========== */
 .contact-hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--light);
-    padding: 40px 20px;
+    padding: 50px 20px;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px 0 40px;
     border-radius: 8px;
 }
 
@@ -235,28 +281,18 @@ header {
     color: var(--light);
 }
 
-.contact-hero p {
-    color: rgba(255, 255, 255, 1);
-}
-
 .company-info {
     background-color: var(--gray);
-    padding: 30px;
-    margin: 30px 0;
+    padding: 40px;
+    margin: 40px 0;
     border-radius: 8px;
-}
-
-.company-info h2 {
-    text-align: center;
-    color: var(--primary);
-    font-size: 2rem;
-    margin-bottom: 25px;
 }
 
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .info-item {
@@ -266,24 +302,8 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.info-item h3 {
-    color: var(--primary);
-    margin-bottom: 10px;
-}
-
-.info-item p {
-    color: var(--dark);
-}
-
 .map-section {
-    margin: 30px 0;
-}
-
-.map-section h2 {
-    text-align: center;
-    color: var(--dark);
-    font-size: 2rem;
-    margin-bottom: 20px;
+    margin: 40px 0;
 }
 
 .map-container {
@@ -294,16 +314,9 @@ header {
 
 .contact-form {
     background-color: var(--gray);
-    padding: 30px;
-    margin: 30px 0;
+    padding: 40px;
+    margin: 40px 0;
     border-radius: 8px;
-}
-
-.contact-form h2 {
-    text-align: center;
-    color: var(--primary);
-    font-size: 2rem;
-    margin-bottom: 25px;
 }
 
 .form-group {
@@ -313,26 +326,17 @@ header {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: var(--dark);
+    color: var(--primary);
     font-weight: 600;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 2px solid #d1d5db;
     border-radius: 4px;
     font-size: 1rem;
-    font-family: inherit;
-    background-color: var(--light);
-    color: var(--dark);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--secondary);
 }
 
 .radio-group {
@@ -346,13 +350,6 @@ header {
     margin-right: 10px;
 }
 
-.radio-group label {
-    display: inline-flex;
-    align-items: center;
-    font-weight: normal;
-    color: var(--dark);
-}
-
 .checkbox {
     display: flex;
     align-items: center;
@@ -363,11 +360,6 @@ header {
     width: auto;
 }
 
-.checkbox label {
-    color: var(--dark);
-    font-weight: normal;
-}
-
 .submit-btn {
     background-color: var(--highlight);
     color: var(--light);
@@ -375,31 +367,20 @@ header {
     padding: 12px 30px;
     font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 50px;
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #92400e;
 }
 
 .employee-profiles {
     margin: 40px 0;
 }
 
-.employee-profiles h2 {
-    text-align: center;
-    color: var(--dark);
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
-
 .employee-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .employee-grid figure {
@@ -420,129 +401,7 @@ header {
     padding: 15px;
 }
 
-.employee-grid h3 {
-    color: var(--primary);
-    margin-bottom: 5px;
-}
-
-.employee-grid p {
-    color: var(--dark);
-}
-
-/* ========== FOOTER ========== */
-footer {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 25px;
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px 8px 0 0;
-}
-
-footer p {
-    margin: 0;
-    font-size: 1rem;
-    color: var(--light);
-}
-
-.socialmedia {
-    display: flex;
-    gap: 15px;
-}
-
-.socialmedia a {
-    text-decoration: none;
-}
-
-.socialmedia img {
-    width: 30px;
-    height: 30px;
-    /* SIN FILTER - iconos con colores normales */
-}
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 1024px) {
-    .adventure-gallery {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .history-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .history-content img {
-        justify-self: center;
-        order: 2;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .nav-flex {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .hero h1,
-    .contact-hero h1 {
-        font-size: 2rem;
-        padding: 15px;
-    }
-
-    .hero article {
-        padding: 20px;
-    }
-
-    .hero article img {
-        float: none;
-        display: block;
-        margin: 0 auto 15px;
-    }
-
-    .adventure-gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .info-grid,
-    .employee-grid {
-        grid-template-columns: 1fr;
-    }
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .adventure-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-flex {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .hero h1,
-    .contact-hero h1 {
-        font-size: 1.8rem;
-    }
-}
-
 /* ========== HOME PAGE STYLES ========== */
-
-/* Home Hero */
 .home-hero {
     position: relative;
     margin: 30px 0 40px;
@@ -565,7 +424,7 @@ footer p {
     right: 0;
     text-align: center;
     color: var(--light);
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     padding: 20px;
     margin: 0;
@@ -586,39 +445,6 @@ footer p {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Call to Action Buttons */
-.cta-button {
-    display: inline-block;
-    background-color: var(--highlight);
-    color: var(--light);
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    border: 2px solid var(--light);
-}
-
-.cta-button:hover {
-    background-color: #92400e;
-    transform: scale(1.05);
-}
-
-.cta-button-large {
-    display: inline-block;
-    background-color: var(--highlight);
-    color: var(--light);
-    padding: 18px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.3rem;
-    transition: all 0.3s ease;
-    border: 2px solid var(--light);
-}
-
-/* CTA Section */
 .cta-section {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--light);
@@ -629,26 +455,19 @@ footer p {
 }
 
 .cta-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
+    font-size: 2rem;
     color: var(--light);
+    margin-bottom: 15px;
 }
 
-.cta-section p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    opacity: 0.95;
-}
-
-/* CSS Grid Layout - Home */
 .home-grid {
     margin: 60px 0;
 }
 
 .home-grid h2 {
     text-align: center;
-    font-size: 2.2rem;
     color: var(--primary);
+    font-size: 2.2rem;
     margin-bottom: 40px;
 }
 
@@ -663,7 +482,7 @@ footer p {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .grid-item:hover {
@@ -684,10 +503,8 @@ footer p {
 
 .grid-item p {
     padding: 0 20px 20px;
-    color: var(--dark);
 }
 
-/* Newsletter */
 .newsletter {
     background-color: var(--light-blue);
     padding: 60px 30px;
@@ -695,25 +512,16 @@ footer p {
     margin: 40px 0;
 }
 
-.newsletter-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 .newsletter h2 {
+    text-align: center;
     color: var(--primary);
     font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.newsletter p {
-    color: var(--dark);
-    font-size: 1.1rem;
     margin-bottom: 30px;
 }
 
 .newsletter-form {
+    max-width: 600px;
+    margin: 0 auto;
     background-color: var(--light);
     padding: 30px;
     border-radius: 8px;
@@ -727,67 +535,34 @@ footer p {
     margin-bottom: 20px;
 }
 
-.newsletter-form .form-group {
-    text-align: left;
-}
-
-.newsletter-form label {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--primary);
-    font-weight: 600;
-}
-
-.newsletter-form input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 1rem;
-}
-
 .subscribe-btn {
     background-color: var(--highlight);
     color: var(--light);
     border: none;
-    padding: 15px 40px;
-    font-size: 1.2rem;
+    padding: 15px 30px;
+    font-size: 1.1rem;
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease;
     width: 100%;
 }
 
-.subscribe-btn:hover {
-    background-color: #92400e;
-}
-
-/* Home Contact Section */
 .home-contact {
     background: linear-gradient(135deg, var(--primary), #1e3a8a);
     color: var(--light);
     padding: 60px 30px;
     text-align: center;
     border-radius: 12px;
-    margin: 40px 0 60px;
+    margin: 40px 0;
 }
 
 .home-contact h2 {
     font-size: 2rem;
-    margin-bottom: 15px;
     color: var(--light);
-}
-
-.home-contact p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    opacity: 0.95;
+    margin-bottom: 15px;
 }
 
 /* ========== TRIPS PAGE STYLES ========== */
-
-/* Trips Hero */
 .trips-hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--light);
@@ -798,17 +573,11 @@ footer p {
 }
 
 .trips-hero h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 15px;
     color: var(--light);
 }
 
-.trips-hero p {
-    font-size: 1.3rem;
-    opacity: 0.95;
-}
-
-/* Trips CTA */
 .trips-cta {
     background-color: var(--gray);
     padding: 30px;
@@ -824,11 +593,6 @@ footer p {
     font-weight: 600;
     color: var(--primary);
     margin: 0;
-}
-
-/* Trip Grid */
-.trip-grid {
-    margin: 40px 0;
 }
 
 .trip-grid h2 {
@@ -849,9 +613,7 @@ footer p {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    transition: transform 0.3s;
 }
 
 .trip-card:hover {
@@ -866,9 +628,6 @@ footer p {
 
 .trip-content {
     padding: 25px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .trip-content h3 {
@@ -894,48 +653,15 @@ footer p {
     color: #991b1b;
 }
 
-.duration,
-.age {
-    color: var(--dark);
-    margin-bottom: 5px;
-    font-size: 0.95rem;
-}
-
-.trip-content p {
-    margin: 10px 0;
-    line-height: 1.6;
-}
-
-.trip-content ul {
-    margin: 15px 0;
-    padding-left: 20px;
-}
-
-.trip-content li {
-    margin-bottom: 5px;
-    list-style-type: none;
-    position: relative;
-    padding-left: 25px;
-}
-
-.trip-content li::before {
-    content: "✓";
-    color: var(--highlight);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
-
 .price {
     font-size: 1.4rem;
     font-weight: bold;
     color: var(--primary);
-    margin-top: auto;
+    margin-top: 15px;
     padding-top: 15px;
     border-top: 1px solid #e5e7eb;
 }
 
-/* Trips Table */
 .trips-table-section {
     margin: 60px 0;
 }
@@ -965,7 +691,6 @@ footer p {
     color: var(--light);
     padding: 15px;
     text-align: left;
-    font-weight: 600;
 }
 
 .trips-table td {
@@ -977,11 +702,6 @@ footer p {
     background-color: #f9fafb;
 }
 
-.trips-table tr:hover {
-    background-color: #f3f4f6;
-}
-
-/* Final CTA */
 .final-cta {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--light);
@@ -993,36 +713,38 @@ footer p {
 
 .final-cta h2 {
     font-size: 2rem;
+    color: var(--light);
     margin-bottom: 20px;
-    color: var(--light);
 }
 
-/* Wireframe Link */
-.wireframe-link {
-    margin-top: 15px;
-    text-align: center;
-}
-
-.wireframe-link a {
-    color: var(--light);
-    text-decoration: underline;
-    font-size: 0.9rem;
-}
-
-/* ========== RESPONSIVE UPDATES ========== */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 1024px) {
-    .grid-container {
+
+    .grid-container,
+    .trips-container,
+    .employee-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .trips-container {
-        grid-template-columns: repeat(2, 1fr);
+    .adventure-gallery {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 768px) {
+    .header-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .nav-flex {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     .home-hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         top: 40px;
     }
 
@@ -1030,7 +752,9 @@ footer p {
         bottom: 40px;
     }
 
-    .grid-container {
+    .grid-container,
+    .trips-container,
+    .employee-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1039,8 +763,12 @@ footer p {
         gap: 15px;
     }
 
-    .trips-container {
+    .history-content {
         grid-template-columns: 1fr;
+    }
+
+    .adventure-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .trips-cta {
@@ -1049,7 +777,29 @@ footer p {
         gap: 15px;
     }
 
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .adventure-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .home-hero h1 {
+        font-size: 1.8rem;
+    }
+
     .trips-hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 }
