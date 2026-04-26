@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Mochi · Gomitas Fashion</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fff9fc 0%, #ffe4f3 100%);
+            font-family: 'Quicksand', sans-serif;
+            color: #5e4b5b;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* === ELEGANCIA KAWAII === */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* HEADER fashion */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0 0.8rem;
+            flex-wrap: wrap;
+            border-bottom: 2px dashed #fbb1c2;
+        }
+
+        .logo h1 {
+            font-weight: 600;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #d45b7a, #b980f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo span {
+            font-size: 1rem;
+            font-weight: 300;
+            display: block;
+            color: #b28b9e;
+            letter-spacing: 3px;
+            margin-top: -5px;
+        }
+
+        .owner-spotlight {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(6px);
+            padding: 0.6rem 1.8rem 0.6rem 1.2rem;
+            border-radius: 100px;
+            box-shadow: 0 4px 15px rgba(242, 152, 202, 0.15);
+            border: 1px solid white;
+        }
+
+        .owner-spotlight i {
+            font-size: 2.4rem;
+            color: #d45b7a;
+            filter: drop-shadow(2px 2px 10px rgba(255, 182, 219, 0.6));
+        }
+
+        .owner-text p {
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .owner-text small {
+            font-size: 0.9rem;
+            color: #ad6c8b;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .owner-text small i {
+            font-size: 0.7rem;
+            color: #f5a3c5;
+        }
+
+        /* HERO — imagen elegante y coqueta */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            margin: 3rem 0 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1 1 300px;
+        }
+
+        .hero-text h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #4a2f3d;
+        }
+
+        .hero-text h2 i {
+            color: #fc96b1;
+            font-size: 2.7rem;
+            margin-right: 8px;
+        }
+
+        .hero-text .highlight {
+            background: #ffe6f0;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            display: inline-block;
+            font-weight: 500;
+            margin: 15px 0 10px;
+            border: 1px solid #ffbfd5;
+            color: #b85c7c;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin: 20px 0 30px;
+            font-weight: 300;
+            color: #5e4b5b;
+            max-width: 450px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: #b980f0;
+            color: white;
+            box-shadow: 0 10px 20px #e1b5e9;
+        }
+
+        .btn-primary:hover {
+            background: #d45b7a;
+            box-shadow: 0 10px 25px #f6b0c7;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #fbb1c2;
+            color: #b85c7c;
+        }
+
+        .btn-secondary:hover {
+            background: #ffecf1;
+            border-color: #d45b7a;
+        }
+
+        /* imagen de la dueña fashion (ilustración elegante) */
+        .hero-image {
+            flex: 1 1 300px;
+            background: linear-gradient(145deg, #ffe6f1, #ffffff);
+            border-radius: 40px 40px 40px 40px;
+            padding: 1.5rem 1.5rem 0 1.5rem;
+            box-shadow: 0 25px 40px -10px rgba(255, 157, 199, 0.4);
+            text-align: center;
+            border: 2px solid white;
+            transition: all 0.2s ease;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            width: 340px;
+            height: auto;
+            filter: drop-shadow(0 15px 10px rgba(190, 120, 160, 0.3));
+            border-radius: 30px;
+        }
+
+        .hero-image p.caption {
+            background: white;
+            padding: 0.5rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #a65279;
+            margin: 15px 0 0;
+            border: 1px solid #ffc1d4;
+        }
+
+        .hero-image p.caption i {
+            color: #f182a6;
+            margin: 0 3px;
+        }
+
+        /* SECCIÓN DESTACADOS (gomitas de personaje) */
+        .featured {
+            margin: 4rem 0;
+        }
+
+        .featured h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #482f3b;
+        }
+
+        .featured h3 i {
+            background: #fec8df;
+            padding: 8px;
+            border-radius: 50%;
+            color: #a63663;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            justify-content: center;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 1rem 1.5rem;
+            border-radius: 35px;
+            flex: 1 1 180px;
+            max-width: 220px;
+            text-align: center;
+            box-shadow: 0 15px 30px #fad1e6;
+            border: 1px solid #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.02);
+            background: #ffffffd6;
+            border-color: #fcb1cc;
+        }
+
+        .product-card i {
+            font-size: 4rem;
+            color: #e590b5;
+            margin-bottom: 10px;
+            filter: drop-shadow(2px 6px 10px #fec0da);
+        }
+
+        .product-card h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3f2936;
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin: 10px 0;
+            color: #785569;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #a63663;
+            background: #fff0f7;
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
+            display: inline-block;
+            margin: 10px 0 5px;
+            border: 1px solid #fec4d6;
+        }
+
+        .btn-micro {
+            background: transparent;
+            border: 1.5px solid #f7a8c2;
+            border-radius: 40px;
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #b45a7a;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 5px;
+        }
+
+        .btn-micro:hover {
+            background: #f7a8c2;
+            color: white;
+        }
+
+        /* mensaje de la dueña */
+        .owner-message {
+            background: #ffffffb8;
+            backdrop-filter: blur(5px);
+            border-radius: 60px;
+            padding: 1.8rem 2.5rem;
+            margin: 2rem 0 4rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border: 2px solid white;
+            box-shadow: 0 0 30px #fbc1db;
+        }
+
+        .message-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .message-left i {
+            font-size: 3rem;
+            color: #e693b5;
+        }
+
+        .message-left span {
+            max-width: 350px;
+            font-weight: 400;
+            color: #572d44;
+        }
+
+        .message-right .btn {
+            background: #d68cb0;
+            color: white;
+            border: none;
+            box-shadow: 0 5px 15px #e2a6c2;
+            font-size: 1.1rem;
+        }
+
+        .message-right .btn:hover {
+            background: #c46b98;
+        }
+
+        /* footer cute */
+        footer {
+            margin-top: auto;
+            background: #fcd3e6c9;
+            backdrop-filter: blur(2px);
+            padding: 1.8rem 0;
+            border-radius: 60px 60px 0 0;
+            border-top: 2px solid white;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .socials a {
+            color: #a85177;
+            font-size: 1.5rem;
+            margin: 0 8px;
+            transition: 0.2s;
+        }
+
+        .socials a:hover {
+            color: #d45b7a;
+            transform: scale(1.1);
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .hero-text h2 {
+                font-size: 2.3rem;
+            }
+
+            .owner-message {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header con dueña spotlight -->
+        <div class="top-bar">
+            <div class="logo">
+                <h1>sweet·mochi <i class="fa-regular fa-star" style="font-size:1.8rem;"></i></h1>
+                <span>Gomitas con carácter</span>
+            </div>
+            <div class="owner-spotlight">
+                <i class="fas fa-crown"></i>
+                <div class="owner-text">
+                    <p>♡ Vani · Sweet Mochi ♡</p>
+                    <small><i class="fas fa-gem"></i> dueña fashion · tu candy stylist</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero: imagen elegante y coqueta de la dueña + llamado -->
+        <div class="hero">
+            <div class="hero-text">
+                <h2>
+                    <i class="fa-regular fa-hand-peace"></i>
+                    Gomitas de personaje
+                </h2>
+                <div class="highlight"><i class="fa-regular fa-heart"></i> Colección limited ·
+                    kawaii luxury</div>
+                <p>Dulces de gomita con la forma de tus personajes favoritos, creadas por Vani para
+                    los paladares más finos y divertidos.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary"><i class="fa-regular fa-star"></i> Ver
+                        colección</a>
+                    <a href="#" class="btn btn-secondary"><i class="fa-regular fa-gem"></i>
+                        Instagram</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Imagen elegante de la vendedora / dueña fashion (ilustración vectorial) -->
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23ffe3f0'/%3E%3Ccircle cx='200' cy='140' r='70' fill='%23fcd6c4'/%3E%3Ccircle cx='160' cy='120' r='8' fill='%233f2d33'/%3E%3Ccircle cx='240' cy='120' r='8' fill='%233f2d33'/%3E%3Cpath d='M180 160 Q200 180 220 160' stroke='%23b2527c' stroke-width='6' fill='none' stroke-linecap='round' /%3E%3Crect x='150' y='200' width='100' height='130' rx='25' fill='%23f2b3cf'/%3E%3Ccircle cx='200' cy='240' r='25' fill='%23ffffff' /%3E%3Ccircle cx='200' cy='240' r='15' fill='%23f294b9' /%3E%3Cpath d='M130 220 L110 280 L140 260' fill='%23fac8dd' /%3E%3Cpath d='M270 220 L290 280 L260 260' fill='%23fac8dd' /%3E%3Ccircle cx='150' cy='300' r='18' fill='%23e086ae' /%3E%3Ccircle cx='250' cy='300' r='18' fill='%23e086ae' /%3E%3Crect x='184' y='325' width='32' height='40' rx='10' fill='%23955f7f' /%3E%3Ctext x='80' y='380' font-family='Arial' fill='%23955f7f' font-size='28' font-weight='bold'%3E🌸%3C/text%3E%3Ctext x='280' y='380' font-family='Arial' fill='%23955f7f' font-size='32'%3E🍭%3C/text%3E%3C/svg%3E"
+                  alt="Vani, dueña fashion de Sweet Mochi - ilustración kawaii">
+                <p class="caption"><i class="fa-regular fa-star"></i> Vani · siempre con sus gomitas
+                    más chic <i class="fa-regular fa-star"></i></p>
+            </div>
+        </div>
+
+        <!-- Productos destacados (gomitas de personajes) -->
+        <div class="featured">
+            <h3><i class="fa-regular fa-face-smile"></i> Personajes en edición dulce</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <i class="fa-regular fa-star"></i>
+                    <h4>Uni·kitty</h4>
+                    <p>Gomita arcoíris con purpurina comestible</p>
+                    <div class="price">$ 4.990</div>
+                    <button class="btn-micro"><i class="fa-regular fa-heart"></i> Lo quiero</button>
+                </div>
+                <div class="product-card">
+                    <i class="fa-regular fa-crown"></i>
+                    <h4>Princesa Peach</h4>
+                    <p>Sabor durazno · edición fashionista</p>
+                    <div class="price">$ 5.490</div>
+                    <button class="btn-micro"><i class="fa-regular fa-heart"></i> Lo quiero</button>
+                </div>
+                <div class="product-card">
+                    <i class="fa-regular fa-face-smile-wink"></i>
+                    <h4>Kuromi</h4>
+                    <p>Gomita ácida de frambuesa negra</p>
+                    <div class="price">$ 4.490</div>
+                    <button class="btn-micro"><i class="fa-regular fa-heart"></i> Lo quiero</button>
+                </div>
+                <div class="product-card">
+                    <i class="fa-regular fa-sun"></i>
+                    <h4>My Melody</h4>
+                    <p>Fresa con crema · edición limitada</p>
+                    <div class="price">$ 5.990</div>
+                    <button class="btn-micro"><i class="fa-regular fa-heart"></i> Lo quiero</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner de la dueña (Vani) fashion -->
+        <div class="owner-message">
+            <div class="message-left">
+                <i class="fa-regular fa-comment-dots"></i>
+                <span> <strong>Vani</strong> — "Cada gomita la elijo yo misma para que brilles con
+                    tu personaje favorito. 🩷"</span>
+            </div>
+            <div class="message-right">
+                <a href="#" class="btn"><i class="fa-regular fa-clipboard"></i> Seguir a Vani</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer kawaii -->
+    <footer>
+        <div class="container footer-content">
+            <p>🍬 Sweet Mochi · by Vani · 2025 · todos los derechos ricos 🍬</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-regular fa-envelope"></i></a>
+                <a href="#"><i class="fa-regular fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

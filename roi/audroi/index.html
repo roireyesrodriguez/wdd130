@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioRank - Mis audífonos recomendados</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🎧 AudioRank</h1>
+                <p>Audífonos buenos, bonitos y <strong>menos de 100 USD</strong></p>
+                <p class="tiktok-link">📱 Mi TikTok: <a
+                      href="https://www.tiktok.com/@motion..melody"
+                      target="_blank">@motion..melody</a>
+                    (consigue los míos recomendados)</p>
+            </div>
+            <div class="animated-headphones">
+                <div class="headphones-icon">🎧</div>
+                <div class="music-notes">
+                    <span class="note note1">♪</span>
+                    <span class="note note2">♫</span>
+                    <span class="note note3">♪</span>
+                    <span class="note note4">♩</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="kz">KZ</button>
+            <button class="filter-btn" data-filter="cca">CCA</button>
+            <button class="filter-btn" data-filter="otros">Otros</button>
+        </section>
+
+        <div class="stats-banner">
+            <span>🎯 8 audífonos analizados</span>
+            <span>⚡ Todos menos de $100 USD</span>
+            <span>🎵 Recomendaciones diarias en TikTok</span>
+        </div>
+
+        <section class="cards-container" id="cards-container">
+            <!-- Los cards se generarán con JS -->
+        </section>
+    </main>
+
+    <footer>
+        <p>🔗 Los precios pueden cambiar. Al comprar mediante mis enlaces, me ayudas a seguir
+            recomendando.</p>
+        <p>💬 ¿Dudas? Escríbeme en TikTok</p>
+    </footer>
+
+    <!-- MODAL PARA MÁS INFORMACIÓN -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

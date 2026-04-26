@@ -1,0 +1,532 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(145deg, #0b0a1a 0%, #12102a 100%);
+    color: #eee;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+/* HEADER - BLOQUE COMPLETO CENTRADO */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 1rem;
+    text-align: center;
+}
+
+.header-text {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #ffb347, #ff6b6b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.5px;
+    animation: glow 2s ease-in-out infinite;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 5px rgba(255, 107, 107, 0.3));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.6));
+    }
+}
+
+.tiktok-link {
+    margin-top: 0.5rem;
+}
+
+.tiktok-link a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.tiktok-link a:hover {
+    color: #ffb347;
+    text-decoration: underline;
+}
+
+/* ANIMACIÓN - AUDÍFONOS CON NOTAS MUSICALES */
+.animated-headphones {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem;
+    border-radius: 60px;
+    backdrop-filter: blur(10px);
+    min-width: 70px;
+    margin-top: 0.5rem;
+}
+
+.headphones-icon {
+    font-size: 2.2rem;
+    animation: bounce 2s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+}
+
+.music-notes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.note {
+    position: absolute;
+    font-size: 1rem;
+    color: #ffb347;
+    opacity: 0;
+    animation: floatNote 2.5s ease-in-out infinite;
+}
+
+.note1 {
+    top: -15px;
+    left: 5px;
+    animation-delay: 0s;
+}
+
+.note2 {
+    top: -20px;
+    right: 5px;
+    animation-delay: 0.6s;
+    font-size: 1.2rem;
+}
+
+.note3 {
+    bottom: -18px;
+    left: 10px;
+    animation-delay: 1.2s;
+    font-size: 0.9rem;
+}
+
+.note4 {
+    bottom: -10px;
+    right: 10px;
+    animation-delay: 1.8s;
+    font-size: 1.1rem;
+}
+
+@keyframes floatNote {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-30px) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* FILTROS */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #1e1c3a;
+    border: none;
+    color: #ddd;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 1rem;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #ff6b6b;
+    color: #0b0a1a;
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+
+/* STATS BANNER */
+.stats-banner {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    background: linear-gradient(90deg, #ff6b6b20, #ffb34720);
+    padding: 0.8rem;
+    border-radius: 60px;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stats-banner span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* GRID DE TARJETAS */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.8rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* TARJETAS */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    border-radius: 28px;
+    padding: 1.2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    animation: cardAppear 0.5s ease-out;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 107, 107, 0.6);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    background: #2a274b;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    transition: transform 0.3s;
+}
+
+.card:hover img {
+    transform: scale(0.98);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffb347;
+    margin: 0.5rem 0;
+}
+
+.badge {
+    background: #ff6b6b20;
+    color: #ffb347;
+    border-radius: 40px;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.75rem;
+    width: fit-content;
+    margin-bottom: 0.7rem;
+    border: 1px solid #ffb34740;
+}
+
+.desc {
+    font-size: 0.9rem;
+    color: #bbbbdd;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    line-height: 1.4;
+}
+
+.btn-buy {
+    background: linear-gradient(135deg, #ff6b6b, #ffb347);
+    border: none;
+    padding: 0.7rem;
+    border-radius: 60px;
+    font-weight: bold;
+    color: #0b0a1a;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 0.8rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-buy:hover {
+    transform: scale(0.98);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: #888;
+    border-top: 1px solid #2a274b;
+    padding-top: 1.5rem;
+}
+
+/* MODAL - Ventana emergente */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #1a1838, #12102a);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 28px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: 0.2s;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: #ffb347;
+    transform: scale(1.1);
+}
+
+/* Galería de imágenes en el modal */
+.modal-gallery {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.modal-gallery img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 2px solid transparent;
+}
+
+.modal-gallery img:hover {
+    transform: scale(1.05);
+    border-color: #ff6b6b;
+}
+
+.modal-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #ffb347;
+}
+
+.modal-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin: 0.5rem 0;
+}
+
+.modal-desc {
+    color: #bbbbdd;
+    line-height: 1.5;
+    margin: 1rem 0;
+}
+
+.modal-specs {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 16px;
+    margin: 1rem 0;
+}
+
+.modal-specs h3 {
+    color: #ffb347;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.modal-specs ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.modal-specs li {
+    padding: 0.3rem 0;
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.modal-specs li:before {
+    content: "🎧 ";
+    margin-right: 0.5rem;
+}
+
+.modal-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ffb347);
+    border: none;
+    padding: 1rem;
+    border-radius: 60px;
+    font-weight: bold;
+    color: #0b0a1a;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.modal-btn:hover {
+    transform: scale(0.98);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 28px;
+    font-size: 1.2rem;
+    color: #ffb347;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .stats-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        margin: 20% auto;
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    .modal-gallery img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .modal-info h2 {
+        font-size: 1.3rem;
+    }
+}
